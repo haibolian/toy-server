@@ -17,7 +17,7 @@ const user_info_schema = {
     },
     nickname: {
       type: 'string',
-      maxLength: 2,
+      minLength: 2,
       maxLength: 10,
     }
   }
