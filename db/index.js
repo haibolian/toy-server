@@ -1,4 +1,5 @@
 const mysql = require('mysql')
+const util = require('util')
 
 const db = mysql.createPool({
   host: 'localhost',
@@ -6,5 +7,7 @@ const db = mysql.createPool({
   password: 'haibolian',
   database: 'users'
 })
+
+db.query = util.promisify(db.query)
 
 module.exports = db
