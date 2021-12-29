@@ -32,7 +32,7 @@ async function fn(req,res){
   db.query(sqls.register, userInfo, (err, result) => {
     if(err) return res.rs(false, err.message)
     if(result.affectedRows) {
-      res.rs(true, '注册成功')
+      res.rs(true, null, '注册成功')
     }
   })
 }
