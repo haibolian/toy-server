@@ -3,7 +3,6 @@ const db = require(process.cwd() + '/db/index.js')
 const { user_info_validate } = require(process.cwd() + '/schema/register')
 
 const sqls = {
-  find_existent_user:'select * from users where username=?',
   register: 'insert into users set ?'
 }
 
@@ -11,7 +10,7 @@ async function fn(req,res){
   const userInfo = formatUserInfo(req.body)
   
   // 校验是否存在用户名
-  const existentUsersList = await db.query(sqls.find_existent_user, userInfo.username)
+  const existentUsersList = await db.query(req.sqls.query_userInfo_by_username, userInfo.username)
   if(existentUsersList.length) {
     res.rs(false, '用户名已存在')
     return false

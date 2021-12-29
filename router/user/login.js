@@ -1,10 +1,8 @@
 const db = require( process.cwd() + '/db')
-const sqls = {
-  query_userInfo_by_username: 'select * from users where username=?'
-}
+
 async function fn(req,res){
   const { username, password } = req.body
-  const result = await db.query(sqls.query_userInfo_by_username, username)
+  const result = await db.query(req.sqls.query_userInfo_by_username, username)
 
   if(result.length) {
     const isEqual = req.compare(password ,result[0].password)
