@@ -8,7 +8,7 @@ const interfaceList = content(__dirname)
 interfaceList.forEach(inter => {
   if(inter.path === __filename) return
   const { result } = inter
-  router[result.method] && router[result.method](result.path || `/${inter.name}`, result.fn)
+  router[result.method] && router[result.method](result.path || `/${inter.name}`, result.mws || [] , result.fn)
 })
 
 module.exports = router
