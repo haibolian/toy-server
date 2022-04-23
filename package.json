@@ -1,14 +1,14 @@
 {
-  "name": "yijian-server",
+  "name": "toy-server",
   "version": "1.0.0",
-  "description": "yijina-server",
+  "description": "toy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/haibolian/yijian-server.git"
+    "url": "https://github.com/haibolian/toy-server.git"
   },
   "keywords": [
     "express",
